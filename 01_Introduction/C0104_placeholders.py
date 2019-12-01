@@ -25,9 +25,9 @@ from tensorflow.python.framework import ops
 # 设置数据显示的精确度为小数点后3位
 from tools import show_title, show_values
 
-np.set_printoptions(precision = 3, suppress = True, threshold = np.inf, linewidth = 200)
+np.set_printoptions(precision = 8, suppress = True, threshold = np.inf, linewidth = 200)
 
-# to make this notebook's output stable across runs
+# 利用随机种子，保证随机数据的稳定性，使得每次随机测试的结果一样
 np.random.seed(42)
 
 # 初始化默认的计算图
@@ -44,8 +44,7 @@ sess = tf.Session()
 
 # 变量必须在 session 中初始化，才可以使用
 def declare_variable():
-    number_title = "TensorFlow 使用变量"
-    show_title(number_title)
+    show_title("TensorFlow 使用变量")
 
     # Declare a variable
     my_var = tf.Variable(tf.zeros([1, 20]))
@@ -82,8 +81,7 @@ def declare_variable():
 
 
 def declare_placeholder():
-    number_title = "TensorFlow 使用占位符"
-    show_title(number_title)
+    show_title("TensorFlow 使用占位符")
 
     x = tf.placeholder(tf.float32, shape = (4, 4))
     y = tf.identity(x)  # 返回占位符传入的数据本身

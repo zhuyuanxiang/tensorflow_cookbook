@@ -24,9 +24,9 @@ from tensorflow.python.framework import ops
 
 # 设置数据显示的精确度为小数点后3位
 
-np.set_printoptions(precision = 3, suppress = True, threshold = np.inf, linewidth = 200)
+np.set_printoptions(precision = 8, suppress = True, threshold = np.inf, linewidth = 200)
 
-# to make this notebook's output stable across runs
+# 利用随机种子，保证随机数据的稳定性，使得每次随机测试的结果一样
 np.random.seed(42)
 
 # 初始化默认的计算图

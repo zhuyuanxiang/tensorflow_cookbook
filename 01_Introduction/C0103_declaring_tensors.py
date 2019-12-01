@@ -22,11 +22,11 @@ import sklearn
 import tensorflow as tf
 from tensorflow.python.framework import ops
 
-from tools import show_values
+from tools import show_title, show_values
 
 # 设置数据显示的精确度为小数点后3位
-np.set_printoptions(precision = 3, suppress = True, threshold = np.inf, linewidth = 200)
-# to make this notebook's output stable across runs
+np.set_printoptions(precision = 8, suppress = True, threshold = np.inf, linewidth = 200)
+# 利用随机种子，保证随机数据的稳定性，使得每次随机测试的结果一样
 np.random.seed(42)
 
 # Python ≥3.5 is required
@@ -82,8 +82,7 @@ def declare_fix_tensor():
 # 2. 相似形状的张量
 # shaped like other variable
 def declare_similar_tensor():
-    number_title = "TensorFlow 声明相似形状的张量"
-    print('\n', '-' * 5, number_title, '-' * 5)
+    show_title("TensorFlow 声明相似形状的张量")
 
     int_const_tsr = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     show_values(int_const_tsr, "整数常数张量")
@@ -139,8 +138,8 @@ def declare_similar_tensor():
 
 # 3. 序列张量
 def declare_seq_tensor():
-    number_title = "TensorFlow 声明序列张量"
-    print('\n', '-' * 5, number_title, '-' * 5)
+    show_title("TensorFlow 声明序列张量")
+
     linear_seq_tsr = tf.linspace(start = 0.0, stop = 1.0, num = 3)
     show_values(linear_seq_tsr, "浮点序列张量", session = sess)
 
@@ -150,8 +149,7 @@ def declare_seq_tensor():
 
 # 4. 随机张量
 def declare_random_tensor():
-    number_title = "TensorFlow 声明随机张量"
-    print('\n', '-' * 5, number_title, '-' * 5)
+    show_title("TensorFlow 声明随机张量")
 
     row_dim, col_dim = (6, 5)
 

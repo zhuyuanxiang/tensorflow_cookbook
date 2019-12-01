@@ -25,9 +25,9 @@ from tensorflow.python.framework import ops
 # 设置数据显示的精确度为小数点后3位
 from tools import show_title, show_values
 
-np.set_printoptions(precision = 3, suppress = True, threshold = np.inf, linewidth = 200)
+np.set_printoptions(precision = 8, suppress = True, threshold = np.inf, linewidth = 200)
 
-# to make this notebook's output stable across runs
+# 利用随机种子，保证随机数据的稳定性，使得每次随机测试的结果一样
 np.random.seed(42)
 
 # 初始化默认的计算图
@@ -42,8 +42,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 sess = tf.Session()
 
 # 1.5 矩阵
-number_title = "TensorFlow 声明矩阵"
-show_title(number_title)
+show_title("TensorFlow 声明矩阵")
 
 identity_matrix = tf.diag([1.0, 1.0, 1.0])
 show_values(identity_matrix, "单位矩阵")
