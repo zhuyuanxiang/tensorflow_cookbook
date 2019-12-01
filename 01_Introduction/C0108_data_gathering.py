@@ -2,7 +2,7 @@
 """
 @Author     :   zYx.Tom
 @Contact    :   526614962@qq.com
-@site       :   https://zhuyuanxiang.github.io
+@site       :   https://github.com/zhuyuanxiang/tensorflow_cookbook
 ---------------------------
 @Software   :   PyCharm
 @Project    :   TensorFlow_Machine_Learning_Cookbook
@@ -42,11 +42,12 @@ sess = tf.Session()
 
 
 # Data gathering
-# ----------------------------------
-#
+# -----------------------------------------------------------------
 # This function gives us the ways to access
 # the various data sets we will need
 # 数据已经存放在 Data 中，就不用考验那个痛苦的网络了
+
+# -----------------------------------------------------------------
 # Iris Data
 def load_iris_data():
     from sklearn import datasets
@@ -60,6 +61,7 @@ def load_iris_data():
     print(set(iris.target))
 
 
+# -----------------------------------------------------------------
 # Low Birthrate Data
 def load_birthate_data():
     import requests
@@ -73,6 +75,7 @@ def load_birthate_data():
     print(len(birth_data[0]))
 
 
+# -----------------------------------------------------------------
 # Housing Price Data
 def load_housing_price_data():
     from sklearn import datasets
@@ -93,6 +96,7 @@ def load_housing_price_data():
     print(len(housing_data[0]))
 
 
+# -----------------------------------------------------------------
 # MNIST Handwriting Data
 def load_mnist_data():
     from sklearn import datasets
@@ -109,6 +113,7 @@ def load_mnist_data():
     print(mnist.train.labels[1, :])
 
 
+# -----------------------------------------------------------------
 # Ham/Spam Text Data
 def load_spam_ham_text_data():
     # spam：垃圾邮件；ham：非垃圾邮件
@@ -133,6 +138,7 @@ def load_spam_ham_text_data():
     print(text_data_train[1])
 
 
+# -----------------------------------------------------------------
 # Movie Review Data
 def load_movie_review_data():
     # 影评（好评、差评）
@@ -171,6 +177,7 @@ def load_movie_review_data():
     print(neg_data[0])
 
 
+# -----------------------------------------------------------------
 # The Works of Shakespeare Data
 def load_shakespeare_data():
     # Gutenberg中的Shakespeare的书
@@ -188,6 +195,7 @@ def load_shakespeare_data():
     print(len(shakespeare_text))
 
 
+# -----------------------------------------------------------------
 # English-German Sentence Translation Data
 def load_eng_ger_sent_translate_data():
     # 英语——德语句子翻译样本集
@@ -210,6 +218,7 @@ def load_eng_ger_sent_translate_data():
     print(eng_ger_data[10])
 
 
+# -----------------------------------------------------------------
 if __name__ == "__main__":
     load_iris_data()
 

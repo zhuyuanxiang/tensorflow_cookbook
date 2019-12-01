@@ -2,7 +2,7 @@
 """
 @Author     :   zYx.Tom
 @Contact    :   526614962@qq.com
-@site       :   https://zhuyuanxiang.github.io
+@site       :   https://github.com/zhuyuanxiang/tensorflow_cookbook
 ---------------------------
 @Software   :   PyCharm
 @Project    :   TensorFlow_Machine_Learning_Cookbook

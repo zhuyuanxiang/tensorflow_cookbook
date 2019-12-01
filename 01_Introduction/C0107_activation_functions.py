@@ -2,7 +2,7 @@
 """
 @Author     :   zYx.Tom
 @Contact    :   526614962@qq.com
-@site       :   https://zhuyuanxiang.github.io
+@site       :   https://github.com/zhuyuanxiang/tensorflow_cookbook
 ---------------------------
 @Software   :   PyCharm
 @Project    :   TensorFlow_Machine_Learning_Cookbook
@@ -44,22 +44,24 @@ sess = tf.Session()
 test_data = [-10., -3., -1., 0., 1., 3., 10.]
 
 # 部分线性的非线性函数
-# 整流线性单元（Rectifier Linear Unit，ReLU），非线性函数。
+# 1. 整流线性单元（Rectifier Linear Unit，ReLU），非线性函数，max(0,x)：连续但不平滑
 show_values(tf.nn.relu(test_data), "tf.nn.relu({})".format(test_data))
-# ReLUMax6
+# 2. ReLUMax6, min(max(0,x),6)：计算运行速度快，解决梯度消失
 show_values(tf.nn.relu6(test_data), "tf.nn.relu6({})".format(test_data))
-# softplus函数，ReLU函数的平滑版，log(exp(x)+1)
+# 6. softplus函数，ReLU函数的平滑版，log(exp(x)+1)
 show_values(tf.nn.softplus(test_data), "tf.nn.softplus({})".format(test_data))
-# ELU激励函数（Exponential Linear Unit，ELU），
+# 7. ELU激励函数（Exponential Linear Unit，ELU），
 # 与softplus函数相似，只是输入无限小时，趋近于-1，而softplus函数趋近于0.
 show_values(tf.nn.elu(test_data), "tf.nn.elu({})".format(test_data))
 
 # 都是类似于Logistic函数
-# sigmoid函数，Logistic函数，1/(1+exp(-x))
+# 3. sigmoid函数，Logistic函数，1/(1+exp(-x))：最常用的连续的、平滑的激励函数，也叫逻辑函数
+# sigmoid函数的取值范围为-1到1
 show_values(tf.nn.sigmoid(test_data), "tf.nn.sigmoid({})".format(test_data))
-# 双曲正切函数（Hyper Tangent，tanh），((exp(x)-exp(-x))/(exp(x)+exp(-x))
+# 4. 双曲正切函数（Hyper Tangent，tanh），((exp(x)-exp(-x))/(exp(x)+exp(-x))
+# 双曲正切函数的的取值范围为0到1
 show_values(tf.nn.tanh(test_data), "tf.nn.tanh({})".format(test_data))
-# softsign函数，x/(abs(x)+1)
+# 5. softsign函数，x/(abs(x)+1)：符号函数的连续估计
 show_values(tf.nn.softsign(test_data), "tf.nn.softsign({})".format(test_data))
 
 # X range
