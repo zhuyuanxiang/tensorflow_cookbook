@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0303，P47
 @Desc       :   基于 TensorFlow 的线性回归，使用 TensorFlow 实现矩阵分解（Cholesky分解）提高求逆的速度
 """
+# common imports
 import os
 import sys
 

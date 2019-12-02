@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0203，P21
 @Desc       :   TensorFlow 进阶， TensorFlow 的嵌入 Layer
 """
+# common imports
 import os
 import sys
 

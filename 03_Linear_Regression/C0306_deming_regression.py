@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0306，P55
 @Desc       :   基于 TensorFlow 的线性回归，使用 TensorFlow 实现 Demming 回归算法
 """
+# common imports
 import os
 import sys
 

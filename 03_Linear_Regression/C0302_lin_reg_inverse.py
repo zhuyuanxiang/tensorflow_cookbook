@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0302，P45
 @Desc       :   基于 TensorFlow 的线性回归，用 TensorFlow求伪逆矩阵
 """
+# common imports
 import os
 import sys
 

@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0106，P110
 @Desc       :   TensorFlow 基础，声明操作
 """
+# common imports
 import os
 import sys
 

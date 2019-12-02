@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0207，P34
 @Desc       :   TensorFlow 进阶，TensorFlow 实现随机训练和批量训练
 """
+# common imports
 import os
 import sys
 

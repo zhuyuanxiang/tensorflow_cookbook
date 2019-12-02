@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0108，P14
 @Desc       :   TensorFlow 基础，载入需要的数据集
 """
+# common imports
 import os
 import sys
 

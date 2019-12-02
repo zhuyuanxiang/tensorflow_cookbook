@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0104，P6
 @Desc       :   TensorFlow 基础，使用占位符和变量
 """
+# common imports
 import os
 import sys
 
@@ -50,6 +51,7 @@ def declare_variable():
     my_var = tf.Variable(tf.zeros([1, 20]))
 
     print("全局初始化变量")
+    # init = tf.initialize_all_variables()  # 这个已经被废弃了
     initialize_op = tf.global_variables_initializer()  # Initialize operation
     sess.run(initialize_op)  # Run initialization of variable
 

@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec04，P
 @Desc       :   基于 TensorFlow 的线性回归，常用的 Python 工具函数
 """
+# common imports
 import os
 import sys
 

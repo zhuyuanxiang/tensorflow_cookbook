@@ -13,6 +13,7 @@
 @Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0206，P30
 @Desc       :   TensorFlow 进阶，TensorFlow 实现反向传播
 """
+# common imports
 import os
 import sys
 
