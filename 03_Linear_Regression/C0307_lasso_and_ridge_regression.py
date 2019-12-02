@@ -46,6 +46,7 @@ sess = tf.Session()
 # -----------------------------------------------------------------
 # Load the data
 # iris.data = [(Sepal Length, Sepal Width, Petal Length, Petal Width)]
+# 鸢尾花（3种），特征4种（花萼长度、花萼宽度、花瓣长度、花瓣宽度），150条数据
 iris = load_iris()
 x_vals = np.array([x[3] for x in iris.data])
 y_vals = np.array([y[0] for y in iris.data])
@@ -143,7 +144,7 @@ model_output_ridge = x_data @ A + b
 # tf.reduce_mean()会把数据变成一维数据，所以需要把loss_ridge扩展成二维数据
 ridge_param = tf.constant(1.)
 l2_loss = tf.reduce_mean(tf.square(y_target - model_output_ridge))
-loss_ridge = tf.expand_dims(l2_loss + ridge_param * tf.reduce_mean(A @ A), 0)
+loss_ridge = tf.expand_dims(l2_loss + ridge_param * tf.reduce_mean(tf.square(A)), 0)
 # ridge_loss = tf.reduce_mean(tf.square(A))
 # regularization_param = tf.multiply(ridge_param, ridge_loss)
 # loss_ridge = tf.expand_dims(tf.add(l2, regularization_param), 0)

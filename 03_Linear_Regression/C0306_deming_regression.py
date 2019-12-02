@@ -43,6 +43,7 @@ sess = tf.Session()
 
 # Load the data
 # iris.data = [(Sepal Length, Sepal Width, Petal Length, Petal Width)]
+# 鸢尾花（3种），特征4种（花萼长度、花萼宽度、花瓣长度、花瓣宽度），150条数据
 iris = load_iris()
 x_vals = np.array([x[3] for x in iris.data])
 y_vals = np.array([y[0] for y in iris.data])
@@ -71,7 +72,7 @@ model_output = x_data @ A + b
 # demming_denominator = tf.sqrt(tf.add(tf.square(A), 1))
 # loss = tf.reduce_mean(tf.truediv(demming_numerator, demming_denominator))
 # 批量训练一定要求均值，否则得到的是50（batch_size）个值
-loss = tf.reduce_mean(tf.abs(y_target - (x_data @ A + b)) / tf.sqrt(A @ A + 1))
+loss = tf.reduce_mean(tf.abs(y_target - (x_data @ A + b)) / tf.sqrt(tf.square(A) + 1))
 
 # Initialize variables
 init = tf.global_variables_initializer()
