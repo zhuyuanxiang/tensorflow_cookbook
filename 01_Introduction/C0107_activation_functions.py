@@ -21,11 +21,12 @@ import matplotlib.pyplot as plt
 import numpy as np  # pip install numpy<1.17，小于1.17就不会报错
 import sklearn
 import tensorflow as tf
+import winsound
 from tensorflow.python.framework import ops
 
-# 设置数据显示的精确度为小数点后3位
 from tools import show_values
 
+# 设置数据显示的精确度为小数点后3位
 np.set_printoptions(precision = 8, suppress = True, threshold = np.inf, linewidth = 200)
 
 # 利用随机种子，保证随机数据的稳定性，使得每次随机测试的结果一样
@@ -93,10 +94,9 @@ plt.ylim([-2, 2])
 plt.legend(loc = 'upper left')
 plt.title("图1-3：sigmoid、softsign 和 tanh 激励函数")
 
+# -----------------------------------------------------------------
+# 运行结束的提醒
+winsound.Beep(600, 500)
 if len(plt.get_fignums()) != 0:
-    import winsound
-
-    # 运行结束的提醒
-    winsound.Beep(600, 500)
     plt.show()
 pass

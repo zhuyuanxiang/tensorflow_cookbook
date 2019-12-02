@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 import numpy as np  # pip install numpy<1.17，小于1.17就不会报错
 import sklearn
 import tensorflow as tf
+import winsound
 from tensorflow.python.framework import ops
 
 # 设置数据显示的精确度为小数点后3位
@@ -236,10 +237,9 @@ if __name__ == "__main__":
     load_shakespeare_data()
 
     load_eng_ger_sent_translate_data()
+    # -----------------------------------------------------------------
+    # 运行结束的提醒
+    winsound.Beep(600, 500)
     if len(plt.get_fignums()) != 0:
-        import winsound
-
-        # 运行结束的提醒
-        winsound.Beep(600, 500)
         plt.show()
     pass

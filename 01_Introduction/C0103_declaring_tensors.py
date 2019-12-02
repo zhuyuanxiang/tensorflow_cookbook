@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 import numpy as np  # pip install numpy<1.17，小于1.17就不会报错
 import sklearn
 import tensorflow as tf
+import winsound
 from tensorflow.python.framework import ops
 
 from tools import show_title, show_values
@@ -182,10 +183,9 @@ if __name__ == "__main__":
     # declare_seq_tensor()
 
     # declare_random_tensor()
+    # -----------------------------------------------------------------
+    # 运行结束的提醒
+    winsound.Beep(600, 500)
     if len(plt.get_fignums()) != 0:
-        import winsound
-
-        # 运行结束的提醒
-        winsound.Beep(600, 500)
         plt.show()
     pass
