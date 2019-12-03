@@ -22,6 +22,7 @@ import numpy as np  # pip install numpy<1.17，小于1.17就不会报错
 import sklearn
 import tensorflow as tf
 import winsound
+from sklearn.datasets import load_iris
 from tensorflow.python.framework import ops
 
 from tools import show_title
@@ -45,14 +46,12 @@ sess = tf.Session()
 
 show_title("TensorFlow 创建分类器")
 
-from sklearn import datasets
-
-# Load the iris data
+# Load the iris data（150条数据）
 # iris.target = {0, 1, 2}, where '0' is setosa
 # iris.data ~ ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
 # 实现一个二值分类器，预测一朵花是否为山鸢尾（setosa, iris.target==0, binary_target==1.0)
 # 只使用两个特征：花瓣长度（pedal.length,x[2]）和花瓣宽度（pedal.width,x[3]）
-iris = datasets.load_iris()
+iris = load_iris()
 binary_target = np.array([1. if x == 0 else 0. for x in iris.target])
 iris_2d = np.array([[x[2], x[3]] for x in iris.data])
 
