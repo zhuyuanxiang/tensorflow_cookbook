@@ -10,23 +10,21 @@
 @Version    :   v0.1
 @Time       :   2019-11-07 17:11
 @License    :   (C)Copyright 2018-2019, zYx.Tom
-@Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec07，P1
-@Desc       :   自然语言处理，使用“词袋”
+@Reference  :   《TensorFlow机器学习实战指南，Nick McClure》, Sec0702，P144
+@Desc       :   自然语言处理，使用 TensorFlow 实现“词袋”
 @理解：
 1. 这个模型是个错误的模型，因为数据集本身就是87%的正常短信，那么只要判断为正常短信就有87%的准确率。
 而模型的准确率还不到87%，说明正确理解数据集是非常重要的。
 2. 跟踪sess.run(x_col_sums,feed_dict = {x_data: t})，也会发现训练的嵌入矩阵的结果就是UNKNOWN单词和'to'单词过多的短信就是垃圾短信，
 这个也是因为数据集中数据偏离造成的，根本原因还是模型与数据不匹配。
 """
-import io
+# common imports
 import os
 import string
 import sys
-from zipfile import ZipFile
 
 import matplotlib.pyplot as plt
 import numpy as np  # pip install numpy<1.17，小于1.17就不会报错
-import requests
 import sklearn
 import tensorflow as tf
 import winsound
@@ -56,18 +54,11 @@ sess = tf.Session()
 print("载入数据。。。")
 # 下载的文件直接读出，没有下载的文件就下载后读出
 data_file_name = "../Data/SMS_SPam/SMSSpamCollection"
-if os.path.isfile(data_file_name):
-    with open(data_file_name, encoding = 'utf-8') as temp_output_file:
-        text_data = temp_output_file.read()
-        pass
+with open(data_file_name, encoding = 'utf-8') as temp_output_file:
+    text_data = temp_output_file.read()
     pass
-else:
-    zip_url = 'http://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip'
-    r = requests.get(zip_url)
-    z = ZipFile(io.BytesIO(r.content))
-    file = z.read('SMSSpamCollection')
-    text_data = file.decode()
-    pass
+pass
+
 
 # Format Data
 text_data = text_data.encode('ascii', errors = 'ignore')
